@@ -16,13 +16,12 @@ public class TestCalculadora {
 		resultadoDividir=calcu.dividir(10, 2);
 		resultadoPromediar=calcu.promediar(10,8,9);
 		
-		calcu.mostrarResultados();
 		System.out.println("RESULTADO SUMA: "+resultadoSuma);
 		System.out.println("RESULTADO RESTA: "+resultadoResta);
 		System.out.println("RESULTADO MULTIPLICACION: "+resultadoMultiplicar);
 		System.out.println("RESULTADO DIVISION: "+resultadoDividir);
 		System.out.println("RESULTADO PROMEDIAR: "+resultadoPromediar);
-		
+
 
 	}
 
