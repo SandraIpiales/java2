@@ -3,10 +3,25 @@ package com.krakedev;
 public class TestProducto {
 
 	public static void main(String[] args) {
-		Producto productoA = new Producto("Gel","Embase Pequenio",1.50,100);
-		Producto productoB = new Producto("Jarabe","Embase 300ml",5.50,50);
-		Producto productoC = new Producto("Mascarillas","Color Azul Quirurgicas",7.20,75);
+		Producto productoA = new Producto();
+		Producto productoB = new Producto();
+		Producto productoC = new Producto();
+		//Modificar Atributos
+		productoA.setNombre("Gel");
+		productoA.setDescripcion("Embase Pequenio");
+		productoA.setPrecio(1.50);
+		productoA.setStockActual(100);
 		
+		productoB.setNombre("Jarabe");
+		productoB.setDescripcion("Embase 300ml");
+		productoB.setPrecio(5.50);
+		productoB.setStockActual(50);
+		
+		//Mostrar Valores de Atributos
+		productoC.setNombre("Mascarillas");
+		productoC.setDescripcion("Color Azul Quirurgicas");
+		productoC.setPrecio(7.20);
+		productoC.setStockActual(75);
 		System.out.println("----- Producto A ------");
 		System.out.println("productoA.nombre: "+ productoA.getNombre());
 		System.out.println("productoA.descripcion: "+ productoA.getDescripcion());
