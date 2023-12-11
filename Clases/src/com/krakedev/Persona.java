@@ -6,7 +6,7 @@ public class Persona {
 	private double estatura;
 	
 	public Persona() {
-		System.out.println("ingresa al constructor");
+		
 	}
 	public Persona(String nombre) {
 		this.nombre= nombre;

@@ -1,4 +1,6 @@
-package com.krakedev;
+package com.krakedev.test;
+
+import com.krakedev.Persona;
 
 /*
  * Comentario de varias lineas
@@ -35,6 +37,7 @@ public class TestPersona {
 		System.out.println("********");
 		System.out.println("p.nombre: " + p.getNombre());
 		System.out.println("p2.nombre: " + p2.getNombre());
+		System.out.println("p3.nombre: " + p3.getNombre());
 
 	}
 

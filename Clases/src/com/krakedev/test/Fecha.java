@@ -1,4 +1,4 @@
-package com.krakedev;
+package com.krakedev.test;
 
 public class Fecha {
 	private int anio;
