@@ -30,7 +30,7 @@ public class Telefono {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public boolean isTieneWhatsapp() {
+	public boolean getTieneWhatsapp() {
 		return tieneWhatsapp;
 	}
 	public void setTieneWhatsapp(boolean tieneWhatsapp) {
