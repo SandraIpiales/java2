@@ -60,17 +60,32 @@ public class MaquinaDulces {
 		}
 		System.out.println("***Saldo Actual***: " + saldo);
 	}
-	
+
 	public Producto buscarProductoEnCelda(String codCelda) {
-		Celda elementoCelda=null;
-		Producto productoEncontrado=null;
-		for(int i=0; i<celdas.size();i++) {
-			elementoCelda= celdas.get(i);
-			if(codCelda.equals(elementoCelda.getCodigo())) {
-				productoEncontrado=elementoCelda.getProducto();
+		Celda elementoCelda = null;
+		Producto productoEncontrado = null;
+		for (int i = 0; i < celdas.size(); i++) {
+			elementoCelda = celdas.get(i);
+			if (codCelda.equals(elementoCelda.getCodigo())) {
+				productoEncontrado = elementoCelda.getProducto();
 			}
 		}
 		return productoEncontrado;
+	}
+	
+	public double consultarPrecio(String codCelda) {
+		Celda elementoCelda = null;
+		Producto productoEncontrado = null;
+		double precioProducto=0;
+		for (int i = 0; i < celdas.size(); i++) {
+			elementoCelda = celdas.get(i);
+			if (codCelda.equals(elementoCelda.getCodigo())) {
+				productoEncontrado = elementoCelda.getProducto();
+				precioProducto=productoEncontrado.getPrecio();
+			}
+		}
+		return precioProducto;
+		
 	}
 
 	public ArrayList<Celda> getCeldas() {
