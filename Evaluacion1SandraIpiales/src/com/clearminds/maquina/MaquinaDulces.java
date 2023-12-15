@@ -108,6 +108,20 @@ public class MaquinaDulces {
 		Celda celdaEncontrada= buscarCeldaProducto(codProducto);
 		celdaEncontrada.setStock(celdaEncontrada.getStock()+incremento);
 	}
+	public void vender(String codCelda){
+		Celda elementoCelda=null;
+		Producto productoEnCelda=null;
+		for (int i=0; i<celdas.size();i++) {
+			elementoCelda=celdas.get(i);
+			productoEnCelda=elementoCelda.getProducto();
+			if(codCelda.equals(elementoCelda.getCodigo())) {
+				elementoCelda.setStock(elementoCelda.getStock()-1);
+				saldo=saldo+productoEnCelda.getPrecio();
+			}
+		}
+		mostrarProductos();
+	}
+	
 
 	public ArrayList<Celda> getCeldas() {
 		return celdas;
