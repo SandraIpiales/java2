@@ -49,15 +49,28 @@ public class MaquinaDulces {
 		for (int i = 0; i < celdas.size(); i++) {
 			elementoCelda = celdas.get(i);
 			p1 = elementoCelda.getProducto();
-			System.out.println("----Celda " + elementoCelda.getCodigo()+"-- Stock Actual: " + elementoCelda.getStock() );
-			if (p1 != null) {				
-				System.out.println("Nombre: " + p1.getNombre()
-						+  " Codigo: " + p1.getCodigo()+" Precio: " + p1.getPrecio() );
-			}else {
+			System.out
+					.println("----Celda " + elementoCelda.getCodigo() + "-- Stock Actual: " + elementoCelda.getStock());
+			if (p1 != null) {
+				System.out.println(
+						"Nombre: " + p1.getNombre() + " Codigo: " + p1.getCodigo() + " Precio: " + p1.getPrecio());
+			} else {
 				System.out.println("Sin producto Asignado");
 			}
 		}
 		System.out.println("***Saldo Actual***: " + saldo);
+	}
+	
+	public Producto buscarProductoEnCelda(String codCelda) {
+		Celda elementoCelda=null;
+		Producto productoEncontrado=null;
+		for(int i=0; i<celdas.size();i++) {
+			elementoCelda= celdas.get(i);
+			if(codCelda.equals(elementoCelda.getCodigo())) {
+				productoEncontrado=elementoCelda.getProducto();
+			}
+		}
+		return productoEncontrado;
 	}
 
 	public ArrayList<Celda> getCeldas() {
