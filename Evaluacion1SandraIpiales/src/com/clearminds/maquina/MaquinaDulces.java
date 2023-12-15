@@ -137,6 +137,20 @@ public class MaquinaDulces {
 		}
 		return cambio;
 	}
+	
+	public ArrayList<Producto> buscarMenores(double limite){
+		Celda elementoCelda=null;
+		Producto productoEncontrado=null;
+		ArrayList<Producto> productosMenores= new ArrayList<Producto>();
+		for(int i=0; i<celdas.size();i++) {
+			elementoCelda=celdas.get(i);
+			productoEncontrado=elementoCelda.getProducto();
+			if(productoEncontrado.getPrecio()<limite) {
+				productosMenores.add(productoEncontrado);
+			}
+		}
+		return productosMenores;
+	}
 	public ArrayList<Celda> getCeldas() {
 		return celdas;
 	}
