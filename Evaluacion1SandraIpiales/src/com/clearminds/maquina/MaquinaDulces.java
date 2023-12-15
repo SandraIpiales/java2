@@ -122,7 +122,21 @@ public class MaquinaDulces {
 		mostrarProductos();
 	}
 	
-
+	public double venderConCambio(String codCelda, int valorIngresado) {
+		Celda elementoCelda=null;
+		Producto productoEnCelda=null;
+		double cambio=0;
+		for(int i=0; i<celdas.size();i++) {
+			elementoCelda=celdas.get(i);
+			productoEnCelda=elementoCelda.getProducto();
+			if(codCelda.equals(elementoCelda.getCodigo())) {
+				elementoCelda.setStock(elementoCelda.getStock()-1);
+				saldo=saldo+productoEnCelda.getPrecio();
+				cambio=valorIngresado-productoEnCelda.getPrecio();
+			}
+		}
+		return cambio;
+	}
 	public ArrayList<Celda> getCeldas() {
 		return celdas;
 	}
