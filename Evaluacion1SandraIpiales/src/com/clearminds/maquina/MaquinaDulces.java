@@ -103,6 +103,11 @@ public class MaquinaDulces {
 		}
 		return celdaEncontrada;
 	}
+	
+	public void incrementarProductos(String codProducto, int incremento) {
+		Celda celdaEncontrada= buscarCeldaProducto(codProducto);
+		celdaEncontrada.setStock(celdaEncontrada.getStock()+incremento);
+	}
 
 	public ArrayList<Celda> getCeldas() {
 		return celdas;
