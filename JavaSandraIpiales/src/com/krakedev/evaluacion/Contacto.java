@@ -92,5 +92,19 @@ public class Contacto {
 		}
 		
 	}
+	
+	public ArrayList<Telefono> recuperarIncorrectos() {
+		Telefono elementoTelefono;
+		String estadoListaTelefono;
+		ArrayList<Telefono> listaTelefonoError=new ArrayList<Telefono>();
+		for(int i=0; i<telefonos.size();i++) {
+			elementoTelefono= telefonos.get(i);
+			estadoListaTelefono=elementoTelefono.getEstado();
+			if(estadoListaTelefono.equals("E")) {
+				listaTelefonoError.add(elementoTelefono);			}
+		}
+		
+		return listaTelefonoError;
+	}
 
 }
