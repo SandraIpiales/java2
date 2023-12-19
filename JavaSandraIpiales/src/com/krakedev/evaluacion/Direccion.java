@@ -26,5 +26,6 @@ public class Direccion {
 	public void setCalleSecundaria(String calleSecundaria) {
 		this.calleSecundaria = calleSecundaria;
 	}
+	
 
 }
