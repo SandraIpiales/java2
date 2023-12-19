@@ -67,12 +67,22 @@ public class Contacto {
 				+ direccion.getCalleSecundaria());
 		}else {
 			System.out.println("Direccion no Ingresada");
-		}*/
+		}
 		System.out.println("***"+nombre+" "+apellido+"***");
 		if(direccion!=null) {
 			System.out.println("Dirección: "+ direccion.getCallePrincipal()+" y "+direccion.getCalleSecundaria());
 		}else {
 			System.out.println("No tiene asociada una dirección");
+		}*/
+		System.out.println("Información del Contacto");
+		System.out.println("Cédula: " + cedula);
+		System.out.println("Nombre: " + nombre+" " + apellido);
+		if(direccion!=null) {
+			System.out.println("Dirección: \nCallePrincipal: " + direccion.getCallePrincipal() + "\nCalleSecundaria: "
+				+ direccion.getCalleSecundaria());
+			
+		}else {
+			System.out.println("Direccion no Ingresada");
 		}
 	}
 	
