@@ -7,9 +7,12 @@ import java.util.Date;
 public class Directorio {
 	private ArrayList<Contacto> contactos;
 	private Date fechaModificacion;
+	private ArrayList<Contacto> correcto, incorrecto;
 
 	public Directorio() {
 		contactos = new ArrayList<Contacto>();
+		correcto = new ArrayList<Contacto>();
+		incorrecto = new ArrayList<Contacto>();
 		fechaModificacion = new java.util.Date();
 	}
 
@@ -27,6 +30,23 @@ public class Directorio {
 
 	public void setFechaModificacion(Date fechaModificacion) {
 		this.fechaModificacion = fechaModificacion;
+	}
+	
+
+	public ArrayList<Contacto> getCorrectos() {
+		return correcto;
+	}
+
+	public void setCorrectos(ArrayList<Contacto> correcto) {
+		this.correcto = correcto;
+	}
+
+	public ArrayList<Contacto> getIncorrectos() {
+		return incorrecto;
+	}
+
+	public void setIncorrectos(ArrayList<Contacto> incorrecto) {
+		this.incorrecto = incorrecto;
 	}
 
 	public boolean agregarContacto(Contacto contactoA) {
@@ -62,46 +82,61 @@ public class Directorio {
 		}
 		return contactoEncontrado;
 	}
+
 	public String consultarUltimaModificacion() {
-		 SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		 String datoModificado=formato.format(fechaModificacion);
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		String datoModificado = formato.format(fechaModificacion);
 		return datoModificado;
 	}
-	
+
 	public int contarPerdidos() {
 		Contacto elementoContacto;
 		Direccion direccionContacto;
-		int contactosSinRumbo=0;
-		for(int i=0;i<contactos.size();i++) {
-			elementoContacto=contactos.get(i);
-			direccionContacto=elementoContacto.getDireccion();
-			if(direccionContacto==null) {
+		int contactosSinRumbo = 0;
+		for (int i = 0; i < contactos.size(); i++) {
+			elementoContacto = contactos.get(i);
+			direccionContacto = elementoContacto.getDireccion();
+			if (direccionContacto == null) {
 				contactosSinRumbo++;
 			}
 		}
 		return contactosSinRumbo;
 	}
-	
+
 	public int contarFijos() {
 		Contacto elementoContacto;
-		ArrayList<Telefono> listaTelefono= new ArrayList<Telefono>();
+		ArrayList<Telefono> listaTelefono = new ArrayList<Telefono>();
 		Telefono elementoTelefono;
-		String tipoC,estadoC;
-		int numFijo=0;
-		for(int i=0;i<contactos.size();i++) {
-			elementoContacto=contactos.get(i);
-			listaTelefono=elementoContacto.getTelefonos();
-			for(int j=0;j<listaTelefono.size();j++) {
-				elementoTelefono=listaTelefono.get(j);
-				tipoC=elementoTelefono.getTipo();
-				estadoC=elementoTelefono.getEstado();
-				if(tipoC.equalsIgnoreCase("Convencional")&&estadoC.equalsIgnoreCase("C")) {
+		String tipoC, estadoC;
+		int numFijo = 0;
+		for (int i = 0; i < contactos.size(); i++) {
+			elementoContacto = contactos.get(i);
+			listaTelefono = elementoContacto.getTelefonos();
+			for (int j = 0; j < listaTelefono.size(); j++) {
+				elementoTelefono = listaTelefono.get(j);
+				tipoC = elementoTelefono.getTipo();
+				estadoC = elementoTelefono.getEstado();
+				if (tipoC.equalsIgnoreCase("Convencional") && estadoC.equalsIgnoreCase("C")) {
 					numFijo++;
 				}
 			}
-			
+
 		}
 		return numFijo;
+	}
+	public void depurar() {
+		Contacto elementoContacto;
+		Direccion elementoDireccion;
+		for(int i=0; i<contactos.size();i++) {
+			elementoContacto=contactos.get(i);
+			elementoDireccion=elementoContacto.getDireccion();
+			if(elementoDireccion!=null) {
+				correcto.add(elementoContacto);
+			}else {
+				incorrecto.add(elementoContacto);
+			}
+		}
+		contactos.clear();
 	}
 
 }
