@@ -25,9 +25,24 @@ public class Directorio {
 		this.fechaModificacion = fechaModificacion;
 	}
 	
-	public boolean agregarContacto(Contacto contactoA) {
-		contactos.add(contactoA);
-		return true;
+	public boolean agregarContacto(Contacto contactoA) {	
+		Contacto elementoContacto, contactoEncontrado;
+		String cedulaIngresada=contactoA.getCedula();
+		boolean contactoApto;
+		if(contactos!=null) {
+			contactoEncontrado=buscarPorCedula(cedulaIngresada);
+			if(contactoEncontrado!=null) {
+				contactoApto=false;
+			}else {
+				contactoApto=true;
+				contactos.add(contactoA);
+			}
+		}else {
+			contactos.add(contactoA);
+			contactoApto= true;
+		}
+		return contactoApto;
+	
 	}
 	public Contacto buscarPorCedula(String cedula) {
 		Contacto elementoContacto;
