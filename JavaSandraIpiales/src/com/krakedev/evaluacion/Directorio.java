@@ -81,5 +81,27 @@ public class Directorio {
 		}
 		return contactosSinRumbo;
 	}
+	
+	public int contarFijos() {
+		Contacto elementoContacto;
+		ArrayList<Telefono> listaTelefono= new ArrayList<Telefono>();
+		Telefono elementoTelefono;
+		String tipoC,estadoC;
+		int numFijo=0;
+		for(int i=0;i<contactos.size();i++) {
+			elementoContacto=contactos.get(i);
+			listaTelefono=elementoContacto.getTelefonos();
+			for(int j=0;j<listaTelefono.size();j++) {
+				elementoTelefono=listaTelefono.get(j);
+				tipoC=elementoTelefono.getTipo();
+				estadoC=elementoTelefono.getEstado();
+				if(tipoC.equalsIgnoreCase("Convencional")&&estadoC.equalsIgnoreCase("C")) {
+					numFijo++;
+				}
+			}
+			
+		}
+		return numFijo;
+	}
 
 }
