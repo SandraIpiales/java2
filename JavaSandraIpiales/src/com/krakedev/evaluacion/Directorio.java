@@ -67,5 +67,19 @@ public class Directorio {
 		 String datoModificado=formato.format(fechaModificacion);
 		return datoModificado;
 	}
+	
+	public int contarPerdidos() {
+		Contacto elementoContacto;
+		Direccion direccionContacto;
+		int contactosSinRumbo=0;
+		for(int i=0;i<contactos.size();i++) {
+			elementoContacto=contactos.get(i);
+			direccionContacto=elementoContacto.getDireccion();
+			if(direccionContacto==null) {
+				contactosSinRumbo++;
+			}
+		}
+		return contactosSinRumbo;
+	}
 
 }
