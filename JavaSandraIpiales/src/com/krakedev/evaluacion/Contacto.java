@@ -47,8 +47,7 @@ public class Contacto {
 	}
 
 	public void imprimir() {
-		Direccion datosDireccion;
-		System.out.println("Cédula: " + cedula);
+		/*System.out.println("Cédula: " + cedula);
 		System.out.println("Nombre: " + nombre);
 		System.out.println("Apellido: " + apellido);
 		if(direccion!=null) {
@@ -56,7 +55,14 @@ public class Contacto {
 				+ direccion.getCalleSecundaria());
 		}else {
 			System.out.println("Direccion no Ingresada");
+		}*/
+		System.out.println("***"+nombre+" "+apellido+"***");
+		if(direccion!=null) {
+			System.out.println("Dirección: "+ direccion.getCallePrincipal()+" y "+direccion.getCalleSecundaria());
+		}else {
+			System.out.println("No tiene asociada una dirección");
 		}
+				
 		
 	}
 
