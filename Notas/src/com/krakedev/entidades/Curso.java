@@ -17,7 +17,7 @@ public class Curso {
 		this.estudiantes = estudiantes;
 	}
 
-	public Estudiante buscarEstudiantePorCedula(Estudiante estudiante) {
+	public String buscarEstudiantePorCedula(Estudiante estudiante) {
 		Estudiante elementoEstudiante;
 
 		for (int i = 0; i < estudiantes.size(); i++) {

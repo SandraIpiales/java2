@@ -22,6 +22,9 @@ public class Nota {
 		this.calificacion = calificacion;
 	}
 	
-	
+	public void mostrar(){
+		System.out.println("Materia: " +materia.getNombre()+"Codigo: "+ materia.getCodigo()
+		+" Calificacion: "+ calificacion);
+	}
 	
 }
