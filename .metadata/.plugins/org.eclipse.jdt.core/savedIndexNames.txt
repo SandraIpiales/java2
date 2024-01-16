@@ -10,4 +10,3 @@ INDEX VERSION 1.134+C:\Users\pao_i\Documents\WorkspaceJava\java\.metadata\.plugi
 1622425614.index
 1940105337.index
 1549854921.index
-3413270776.index
