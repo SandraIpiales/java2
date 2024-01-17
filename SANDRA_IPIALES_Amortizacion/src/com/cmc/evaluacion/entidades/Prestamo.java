@@ -1,6 +1,6 @@
 package com.cmc.evaluacion.entidades;
 
-import java.util.ArrayList;
+
 
 public class Prestamo {
 	private double monto;
@@ -15,9 +15,14 @@ public class Prestamo {
 		this.plazo=plazo;
 	}
 	
-	
+
+
 	public Cuota[] getCuotas() {
 		return cuotas;
+	}
+
+	public void setCuotas(Cuota[] cuotas) {
+		this.cuotas = cuotas;
 	}
 
 	public double getMonto() {

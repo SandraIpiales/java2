@@ -1,7 +1,7 @@
 package com.cmc.evaluacion.test;
 
-import com.cmc.evaluacion.entidades.entidades.Prestamo;
-import com.cmc.evaluacion.entidades.servicios.CalculadoraAmortizacion;
+import com.cmc.evaluacion.entidades.Prestamo;
+import com.cmc.evaluacion.servicios.CalculadoraAmortizacion;
 
 public class TestCalculadora2 {
 																																																																																			

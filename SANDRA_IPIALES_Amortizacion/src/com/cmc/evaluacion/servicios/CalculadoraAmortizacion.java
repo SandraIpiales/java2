@@ -13,17 +13,23 @@ public class CalculadoraAmortizacion {
 		return valorCuota;
 	}
 	
-	public void generarTabla(Prestamo prestamo) {
+	public void generarTabla(Prestamo prestamo) { 
 		double cuota= calcularCuota(prestamo);
 		Cuota c1= new Cuota(1);
+		Cuota c2 = new Cuota(2);
+		Cuota
 		c1.setCuota(cuota);
 		c1.setCapital(prestamo.getMonto());
+		for(int i=0;i<prestamo.getPlazo();i++) {
+			prestamo.getCuotas()
+			calcularValorCuota(prestamo.getInteres(),c1,c2);
+		}
 		
 	}
-	public void calcularValorCuota(double interes, Cuota cuota, Cuota cuotaSiguiente) {
-		double valorInteres= (cuota.getCapital()*interes)/100;
-		double abonoCapital  = cuota.getAbonoCapital()-valorInteres;
-		double saldo= cuota.getCapital()-abonoCapital;
+	public void calcularValorCuota(double interes, Cuota cuotaActual, Cuota cuotaSiguiente) {
+		double valorInteres= (cuotaActual.getCapital()*interes)/100;
+		double abonoCapital  = cuotaActual.getAbonoCapital()-valorInteres;
+		double saldo= cuotaActual.getCapital()-abonoCapital;
 		cuotaSiguiente.setCapital(saldo);
 	}
 }
