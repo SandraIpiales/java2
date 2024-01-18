@@ -7,8 +7,8 @@ public class TestCalculadora2 {
 																																																																																			
 	    public static void main(String[] args) {
 	        Prestamo prestamo = new Prestamo(5000, 12, 15);
-
-	        CalculadoraAmortizacion.generarTabla(prestamo);
-	        CalculadoraAmortizacion.mostrarTabla(prestamo);
+	        CalculadoraAmortizacion calculadoraA= new CalculadoraAmortizacion();
+	        calculadoraA.generarTabla(prestamo);
+	        calculadoraA.mostrarTabla(prestamo);
 	    }
 	}

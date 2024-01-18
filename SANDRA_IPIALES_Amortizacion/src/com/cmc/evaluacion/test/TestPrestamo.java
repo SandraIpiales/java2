@@ -2,10 +2,10 @@ package com.cmc.evaluacion.test;
 
 import java.util.ArrayList;
 
-import com.cmc.evaluacion.entidades.entidades.Cliente;
-import com.cmc.evaluacion.entidades.entidades.Prestamo;
-import com.cmc.evaluacion.entidades.servicios.Banco;
-import com.cmc.evaluacion.entidades.servicios.CalculadoraAmortizacion;
+import com.cmc.evaluacion.entidades.Cliente;
+import com.cmc.evaluacion.entidades.Prestamo;
+import com.cmc.evaluacion.servicios.Banco;
+import com.cmc.evaluacion.servicios.CalculadoraAmortizacion;
 
 public class TestPrestamo {
     public static void main(String[] args) {
@@ -21,7 +21,8 @@ public class TestPrestamo {
         
             Prestamo prestamo1 = new Prestamo(4000,12,16);
             banco.asignarPrestamo("1234567890", prestamo1);
-            CalculadoraAmortizacion.generarTabla(prestamo1);
+            CalculadoraAmortizacion calculadoraA= new CalculadoraAmortizacion();
+            calculadoraA.generarTabla(prestamo1);
             
             Prestamo prestamo2 = new Prestamo(50000,10,11);
             banco.asignarPrestamo("1234567890", prestamo2);

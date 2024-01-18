@@ -6,8 +6,8 @@ import com.cmc.evaluacion.servicios.CalculadoraAmortizacion;
 public class TestCalculadora {
     public static void main(String[] args) {
         Prestamo prestamo = new Prestamo(5000, 12, 12);
-
-        CalculadoraAmortizacion.generarTabla(prestamo);
-        CalculadoraAmortizacion.mostrarTabla(prestamo);
+        CalculadoraAmortizacion calculadoraA= new CalculadoraAmortizacion();
+        calculadoraA.generarTabla(prestamo);
+        calculadoraA.mostrarTabla(prestamo);
     }
 }
